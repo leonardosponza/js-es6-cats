@@ -44,18 +44,15 @@ const newcats = gatti.map((element) =>{
 });
 
 
-newcats.forEach((element) => {
-document.getElementById('container').innerHTML += (`<i class="fas fa-award" style ="color:${element.colore}"></i> 
-<i class="fas fa-award" style ="color:${ribboncolor.colore} opacity:${element.ribbon.opacity} "></i>,`);
-});
-
-const gattimaschi = newcats.filter((element) =>{
-    return element.sesso === 'maschio'
-});
-
-const gattifemmina = newcats.filter((element) =>{
-    return element.sesso === 'femmina'
-});
+const printCatsRibbon = (array) => {
+    array.forEach((element) => {
+        document.getElementById("container").innerHTML += `<br/><br/>
+            ${element.nome} : <i class="fas fa-cat" style="color:${element.colore}"></i> 
+            <i class="fas fa-ribbon" style="color:${element.ribbon.color}; opacity:${element.ribbon.opacity}"></i>,
+        
+        `;
+    });
+} 
 
 
 
